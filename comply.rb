@@ -9,8 +9,8 @@ class Comply < Formula
     def install
         ENV["GOPATH"] = buildpath
         ENV.prepend_create_path "PATH", buildpath/"bin"
-        (buildpath/"src/github.com/strongdm/comply").install buildpath.children
-        cd "src/github.com/strongdm/comply" do
+        (buildpath/"src/github.com/ably/comply").install buildpath.children
+        cd "src/github.com/ably/comply" do
             system "make", "brew"
             bin.install "bin/comply"
         end

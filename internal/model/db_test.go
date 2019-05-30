@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/strongdm/comply/internal/config"
+	"github.com/ably/comply/internal/config"
 )
 
 func TestSaveGet(t *testing.T) {
