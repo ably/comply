@@ -1,0 +1,46 @@
+module github.com/paddybyers/comply
+
+go 1.12
+
+require (
+	github.com/Microsoft/go-winio v0.4.7
+	github.com/andygrunwald/go-jira v1.3.0
+	github.com/chzyer/readline v0.0.0-20171208011716-f6d7a1f6fbf3
+	github.com/davecgh/go-spew v1.1.0
+	github.com/docker/distribution v2.6.2+incompatible
+	github.com/docker/docker v1.13.1
+	github.com/docker/go-connections v0.3.0
+	github.com/docker/go-units v0.3.2
+	github.com/elazarl/go-bindata-assetfs v1.0.0 // indirect
+	github.com/fatih/color v1.6.0
+	github.com/fatih/structs v1.0.0
+	github.com/fsnotify/fsnotify v1.4.7
+	github.com/go-bindata/go-bindata v3.1.1+incompatible // indirect
+	github.com/gohugoio/hugo v0.37.1
+	github.com/golang/protobuf v1.0.0
+	github.com/google/go-github v15.0.0+incompatible
+	github.com/google/go-querystring v0.0.0-20170111101155-53e6ce116135
+	github.com/gorilla/websocket v1.2.0
+	github.com/jcelliott/lumber v0.0.0-20160324203708-dd349441af25
+	github.com/juju/ansiterm v0.0.0-20180109212912-720a0952cc2a
+	github.com/lunixbochs/vtclean v0.0.0-20170504063817-d14193dfc626
+	github.com/manifoldco/promptui v0.0.0-20180308161052-c0c0d3afc6a0
+	github.com/mattn/go-colorable v0.0.9
+	github.com/mattn/go-isatty v0.0.3
+	github.com/mattn/go-runewidth v0.0.2
+	github.com/nanobox-io/golang-scribble v0.0.0-20171026142921-ced58d671850
+	github.com/olekukonko/tablewriter v0.0.0-20180130162743-b8a9be070da4
+	github.com/pkg/errors v0.8.0
+	github.com/robfig/cron v1.0.0
+	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
+	github.com/strongdm/comply v1.4.1
+	github.com/trivago/tgo v1.0.1
+	github.com/urfave/cli v1.20.0
+	github.com/xanzy/go-gitlab v0.10.7
+	github.com/yosssi/ace v0.0.5
+	golang.org/x/net v0.0.0-20180308154319-d0aafc73d5cd
+	golang.org/x/oauth2 v0.0.0-20180312235849-7af32f14d0a2
+	golang.org/x/sys v0.0.0-20180302081741-dd2ff4accc09
+	google.golang.org/appengine v1.0.0
+	gopkg.in/yaml.v2 v2.1.1
+)
