@@ -137,7 +137,7 @@ func complyBlankReadmeMd() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "comply-blank/README.md", size: 1961, mode: os.FileMode(420), modTime: time.Unix(1559860481, 0)}
+	info := bindataFileInfo{name: "comply-blank/README.md", size: 1961, mode: os.FileMode(420), modTime: time.Unix(1560553220, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -157,7 +157,7 @@ func complyBlankTodoMd() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "comply-blank/TODO.md", size: 1425, mode: os.FileMode(420), modTime: time.Unix(1559860481, 0)}
+	info := bindataFileInfo{name: "comply-blank/TODO.md", size: 1425, mode: os.FileMode(420), modTime: time.Unix(1560553220, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -317,7 +317,7 @@ func complySoc2ReadmeMd() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "comply-soc2/README.md", size: 1961, mode: os.FileMode(420), modTime: time.Unix(1559860482, 0)}
+	info := bindataFileInfo{name: "comply-soc2/README.md", size: 1961, mode: os.FileMode(420), modTime: time.Unix(1560553220, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -337,7 +337,7 @@ func complySoc2TodoMd() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "comply-soc2/TODO.md", size: 1425, mode: os.FileMode(420), modTime: time.Unix(1559860482, 0)}
+	info := bindataFileInfo{name: "comply-soc2/TODO.md", size: 1425, mode: os.FileMode(420), modTime: time.Unix(1560553220, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
