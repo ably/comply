@@ -16,7 +16,7 @@ templates/      Templates control the output format of the HTML Dashboard and PD
 
 # Building
 
-Assets are built using [`comply`](https://comply.strongdm.com), which can be installed via `brew install comply` (macOS) or `go get github.com/strongdm/comply`
+Assets are built using [`comply`](https://comply.strongdm.com), which can be installed via `brew install comply` (macOS) or `go get github.com/ably/comply`
 
 # Publishing
 

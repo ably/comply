@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	"github.com/strongdm/comply/internal/config"
-	"github.com/strongdm/comply/internal/path"
+	"github.com/ably/comply/internal/config"
+	"github.com/ably/comply/internal/path"
 	"gopkg.in/yaml.v2"
 )
 

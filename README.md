@@ -1,4 +1,4 @@
-![Comply](https://github.com/strongdm/comply/blob/master/logo.png)
+![Comply](https://github.com/ably/comply/blob/master/logo.png)
 
 Comply is a SOC2-focused compliance automation tool:
 
@@ -10,15 +10,15 @@ Comply is a SOC2-focused compliance automation tool:
 
 macOS:
 
-`brew tap strongdm/comply; brew install comply`
+`brew tap ably/comply; brew install comply`
 
 Linux:
 
-[Download latest release](https://github.com/strongdm/comply/releases)
+[Download latest release](https://github.com/ably/comply/releases)
 
 Go users:
 
-`go get github.com/strongdm/comply`
+`go get github.com/ably/comply`
 
 # Get Started
 
@@ -84,15 +84,15 @@ Comply is currently only released for Linux and macOS, however from other operat
 
 ```
 # first pull the latest published docker image
-$ docker pull strongdm/comply
+$ docker pull ably/comply
 
 # from an empty directory that will contain your comply project
-$ docker run --rm -v "$PWD":/source -p 4000:4000 -it strongdm/comply
+$ docker run --rm -v "$PWD":/source -p 4000:4000 -it ably/comply
 root@ec4544732298:/source# comply init
 ✗ Organization Name:
 
 # serve content live from an established project
-$ docker run --rm -v "$PWD":/source -p 4000:4000 -it strongdm/comply
+$ docker run --rm -v "$PWD":/source -p 4000:4000 -it ably/comply
 root@ae4d499583fc:/source# comply serve
 Serving content of output/ at http://127.0.0.1:4000 (ctrl-c to quit)
 ```
@@ -126,8 +126,8 @@ Please make sure that the default *Create Screen* has all of those fields enable
 > Inspiration: http://code.openark.org/blog/development/forking-golang-repositories-on-github-and-managing-the-import-path
 
 ```
-$ go get github.com/strongdm/comply
-$ cd $GOPATH/src/github.com/strongdm/comply ; go get ./...
+$ go get github.com/ably/comply
+$ cd $GOPATH/src/github.com/ably/comply ; go get ./...
 $ make
 $ cd example
 $ mv comply.yml.example comply.yml
@@ -135,5 +135,5 @@ $ ../comply -h
 $ ../comply sync
 $ ../comply serve
 #
-$ make # recompile as needed with in $GOPATH/src/github.com/strongdm/comply
+$ make # recompile as needed with in $GOPATH/src/github.com/ably/comply
 ```

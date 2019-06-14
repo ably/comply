@@ -12,7 +12,7 @@ ENV COMPLY_VERSION ${COMPLY_VERSION:-1.4.0}
 EXPOSE 4000/tcp
 
 # install comply binary
-RUN curl -J -L -o /tmp/comply.tgz https://github.com/strongdm/comply/releases/download/v${COMPLY_VERSION}/comply-v${COMPLY_VERSION}-linux-amd64.tgz \
+RUN curl -J -L -o /tmp/comply.tgz https://github.com/ably/comply/releases/download/v${COMPLY_VERSION}/comply-v${COMPLY_VERSION}-linux-amd64.tgz \
   && tar -xzf /tmp/comply.tgz \
   && mv ./comply-v${COMPLY_VERSION}-linux-amd64 /usr/local/bin/comply
 

@@ -10,7 +10,7 @@ import (
 
 	"github.com/google/go-github/github"
 	"github.com/pkg/errors"
-	"github.com/strongdm/comply/internal/model"
+	"github.com/ably/comply/internal/model"
 	"golang.org/x/oauth2"
 )
 
@@ -140,7 +140,7 @@ func (g *githubPlugin) FindByTagName(name string) ([]*model.Ticket, error) {
 }
 
 func (g *githubPlugin) LinkFor(t *model.Ticket) string {
-	// return fmt.Sprintf("https://github.com/strongdm/comply/issues/%s", t.ID)
+	// return fmt.Sprintf("https://github.com/ably/comply/issues/%s", t.ID)
 	panic("not implemented")
 }
 

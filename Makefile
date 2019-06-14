@@ -3,20 +3,20 @@ GO_SOURCES := $(shell find . -name '*.go')
 THEME_SOURCES := $(shell find themes)
 
 assets: $(THEME_SOURCES)
-	@go get github.com/jteeuwen/go-bindata/...
-	@go get github.com/elazarl/go-bindata-assetfs/...
+	@go get github.com/go-bindata/go-bindata
+	@go get github.com/elazarl/go-bindata-assetfs
 	@go install github.com/elazarl/go-bindata-assetfs
-	go-bindata-assetfs -o bindata.go -pkg theme -prefix themes themes/...
-	mv bindata.go internal/theme/themes_bindata.go
+	go-bindata-assetfs -o bindata_assetfs.go -pkg theme -prefix themes themes/...
+	mv bindata_assetfs.go internal/theme/themes_bindata.go
 
 comply: assets $(GO_SOURCES)
 	@# $(eval VERSION := $(shell git describe --tags --always --dirty="-dev"))
-	@# $(eval LDFLAGS := -ldflags='-X "github.com/strongdm/comply/internal/cli.Version=$(VERSION)"')
-	go build $(LDFLAGS) github.com/strongdm/comply
+	@# $(eval LDFLAGS := -ldflags='-X "github.com/ably/comply/internal/cli.Version=$(VERSION)"')
+	go build $(LDFLAGS) github.com/ably/comply
 
 dist: clean
 	$(eval VERSION := $(shell git describe --tags --always --dirty="-dev"))
-	$(eval LDFLAGS := -ldflags='-X "github.com/strongdm/comply/internal/cli.Version=$(VERSION)"')
+	$(eval LDFLAGS := -ldflags='-X "github.com/ably/comply/internal/cli.Version=$(VERSION)"')
 	mkdir dist
 	echo $(VERSION)
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -gcflags=-trimpath=$(GOPATH) -asmflags=-trimpath=$(GOPATH) -ldflags '-extldflags "-static"' $(LDFLAGS) -o dist/comply-$(VERSION)-darwin-amd64 .
@@ -28,7 +28,7 @@ dist: clean
 
 brew: clean $(GO_SOURCES)
 	$(eval VERSION := $(shell cat version))
-	$(eval LDFLAGS := -ldflags='-X "github.com/strongdm/comply/internal/cli.Version=$(VERSION)"')
+	$(eval LDFLAGS := -ldflags='-X "github.com/ably/comply/internal/cli.Version=$(VERSION)"')
 	mkdir bin
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -gcflags=-trimpath=$(GOPATH) -asmflags=-trimpath=$(GOPATH) $(LDFLAGS) -o bin/comply .
 
@@ -38,7 +38,7 @@ clean:
 	rm -f comply
 
 install: assets $(GO_SOURCES)
-	go install github.com/strongdm/comply
+	go install github.com/ably/comply
 
 push-assets: is-clean assets
 	git commit -am "automated asset refresh (via Makefile)"
@@ -99,7 +99,7 @@ release: release-env dist release-deps
 	--file dist/comply-$(VERSION)-linux-amd64.tgz
 
 	@echo "Update homebrew formula with the following: "
-	$(eval SHA := $(shell curl -s -L https://github.com/strongdm/comply/archive/$(VERSION).tar.gz |shasum -a 256|cut -d" " -f1))
+	$(eval SHA := $(shell curl -s -L https://github.com/ably/comply/archive/$(VERSION).tar.gz |shasum -a 256|cut -d" " -f1))
 	@echo "version $(VERSION) sha $(SHA)"
 	cd $$COMPLY_TAPDIR && ./update.sh $(VERSION) $(SHA)
 
@@ -112,8 +112,8 @@ minor-release: release-env minor release
 	curl -X POST --data-urlencode 'payload={"channel": "#release", "username": "release", "text": "comply $(VERSION) released", "icon_emoji": ":shipit:"}' https://hooks.slack.com/services/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
 
 docker-release:
-	docker build --build-arg COMPLY_VERSION=`cat VERSION` -t strongdm/comply .
-	docker push strongdm/comply
+	docker build --build-arg COMPLY_VERSION=`cat VERSION` -t ably/comply .
+	docker push ably/comply
 
 patch: clean gitsem
 	gitsem -m "increment patch for release (via Makefile)" patch
