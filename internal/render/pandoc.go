@@ -7,11 +7,11 @@ import (
 	"os/exec"
 	"time"
 
+	"github.com/ably/comply/internal/config"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/client"
 	"github.com/pkg/errors"
-	"github.com/ably/comply/internal/config"
 )
 
 var pandocArgs = []string{"-f", "markdown+smart", "--toc", "-N", "--template", "templates/default.latex", "-o"}

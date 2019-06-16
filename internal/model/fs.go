@@ -6,9 +6,9 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/pkg/errors"
 	"github.com/ably/comply/internal/config"
 	"github.com/ably/comply/internal/path"
+	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 )
 

@@ -8,9 +8,9 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/ably/comply/internal/model"
 	"github.com/google/go-github/github"
 	"github.com/pkg/errors"
-	"github.com/ably/comply/internal/model"
 	"golang.org/x/oauth2"
 )
 

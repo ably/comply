@@ -5,9 +5,9 @@ import (
 	"sort"
 	"time"
 
-	"github.com/pkg/errors"
 	"github.com/ably/comply/internal/config"
 	"github.com/ably/comply/internal/model"
+	"github.com/pkg/errors"
 )
 
 type project struct {

@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/manifoldco/promptui"
 	"github.com/ably/comply/internal/config"
 	"github.com/ably/comply/internal/model"
 	"github.com/ably/comply/internal/theme"
+	"github.com/manifoldco/promptui"
 	"github.com/urfave/cli"
 	"gopkg.in/yaml.v2"
 )

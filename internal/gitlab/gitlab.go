@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/pkg/errors"
 	"github.com/ably/comply/internal/model"
+	"github.com/pkg/errors"
 	"github.com/xanzy/go-gitlab"
 )
 

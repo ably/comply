@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/nanobox-io/golang-scribble"
 	"github.com/ably/comply/internal/config"
+	"github.com/nanobox-io/golang-scribble"
 )
 
 var dbSingletonOnce sync.Once

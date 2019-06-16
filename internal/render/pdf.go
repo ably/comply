@@ -3,8 +3,8 @@ package render
 import (
 	"sync"
 
-	"github.com/pkg/errors"
 	"github.com/ably/comply/internal/model"
+	"github.com/pkg/errors"
 )
 
 func pdf(output string, live bool, errCh chan error, wg *sync.WaitGroup) {

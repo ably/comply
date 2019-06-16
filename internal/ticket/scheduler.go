@@ -5,10 +5,10 @@ import (
 	"sort"
 	"time"
 
-	"github.com/pkg/errors"
-	"github.com/robfig/cron"
 	"github.com/ably/comply/internal/config"
 	"github.com/ably/comply/internal/model"
+	"github.com/pkg/errors"
+	"github.com/robfig/cron"
 )
 
 func byProcedureByTime(tickets []*model.Ticket) map[string][]*model.Ticket {

@@ -4,9 +4,9 @@ import (
 	"os"
 	"sort"
 
+	"github.com/ably/comply/internal/model"
 	"github.com/fatih/color"
 	"github.com/olekukonko/tablewriter"
-	"github.com/ably/comply/internal/model"
 	"github.com/urfave/cli"
 )
 
