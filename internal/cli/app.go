@@ -18,13 +18,13 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-	"github.com/pkg/errors"
 	"github.com/ably/comply/internal/config"
 	"github.com/ably/comply/internal/gitlab"
 	"github.com/ably/comply/internal/jira"
 	"github.com/ably/comply/internal/plugin/github"
+	"github.com/docker/docker/api/types"
+	"github.com/docker/docker/client"
+	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 )
 

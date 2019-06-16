@@ -29,3 +29,14 @@ tickets:
   #   domain: https://gitlab.example.com:443/ # or https://gitlab.com/
   #   token: token-here
   #   repo: full-slug/of-project
+
+auth:
+  disabled: false                          # set env AUTH_DISABLED
+  filestorePath: '.comply/sessions'
+  filestoreSecret: 'something-very-secret' # set env AUTH_FILESTORE_SECRET
+  clientId: XXXX
+  clientSecret: ''                         # set env AUTH_CLIENT_SECRET
+  domain: XXXX
+  audience: ''
+  callbackUrl: XXXX                        # set env AUTH_CALLBACK_URL
+  logoutUrl: XXXX                          # set env AUTH_LOGOUT_URL

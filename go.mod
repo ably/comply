@@ -8,6 +8,7 @@ require (
 	github.com/chzyer/logex v1.1.10 // indirect
 	github.com/chzyer/readline v0.0.0-20171208011716-f6d7a1f6fbf3 // indirect
 	github.com/chzyer/test v0.0.0-20180213035817-a1ea475d72b1 // indirect
+	github.com/codegangsta/negroni v1.0.0
 	github.com/davecgh/go-spew v1.1.0
 	github.com/docker/distribution v2.6.2+incompatible // indirect
 	github.com/docker/docker v1.13.1
@@ -22,6 +23,7 @@ require (
 	github.com/golang/protobuf v1.0.0 // indirect
 	github.com/google/go-github v15.0.0+incompatible
 	github.com/google/go-querystring v0.0.0-20170111101155-53e6ce116135 // indirect
+	github.com/gorilla/sessions v1.1.3
 	github.com/gorilla/websocket v1.2.0
 	github.com/jcelliott/lumber v0.0.0-20160324203708-dd349441af25 // indirect
 	github.com/juju/ansiterm v0.0.0-20180109212912-720a0952cc2a // indirect

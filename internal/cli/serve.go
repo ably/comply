@@ -1,8 +1,8 @@
 package cli
 
 import (
-	"github.com/pkg/errors"
 	"github.com/ably/comply/internal/render"
+	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 )
 

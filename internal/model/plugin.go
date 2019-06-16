@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/ably/comply/internal/config"
+	"github.com/davecgh/go-spew/spew"
 )
 
 var tsPluginsMu sync.Mutex

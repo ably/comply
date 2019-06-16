@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pkg/errors"
 	"github.com/ably/comply/internal/model"
+	"github.com/pkg/errors"
 
 	jira "github.com/andygrunwald/go-jira"
 )

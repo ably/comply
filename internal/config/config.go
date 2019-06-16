@@ -38,6 +38,7 @@ type Project struct {
 	FilePrefix     string                 `yaml:"filePrefix"`
 	Tickets        map[string]interface{} `yaml:"tickets"`
 	ApprovedBranch string                 `yaml:"approvedBranch"`
+	Auth           AuthConf               `yaml:"auth,omitempty"`
 }
 
 // SetPandoc records pandoc availability during initialization
@@ -129,4 +130,16 @@ func (p *Project) TicketSystem() (string, error) {
 
 	// no ticket block configured
 	return NoTickets, nil
+}
+
+type AuthConf struct {
+	Disabled        bool   `yaml:"disabled"`
+	FilestorePath   string `yaml:"filestorePath,omitempty"`
+	FilestoreSecret string `yaml:"filestoreSecret,omitempty"`
+	ClientID        string `yaml:"clientId,omitempty"`
+	ClientSecret    string `yaml:"clientSecret,omitempty"`
+	Domain          string `yaml:"domain,omitempty"`
+	Audience        string `yaml:"audience,omitempty"`
+	CallbackURL     string `yaml:"callbackUrl,omitempty"`
+	LogoutURL       string `yaml:"logoutUrl,omitempty"`
 }
