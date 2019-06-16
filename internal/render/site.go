@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/codegangsta/negroni"
 	"github.com/gorilla/websocket"
 	"github.com/pkg/errors"
 	"github.com/yosssi/ace"
@@ -92,8 +93,9 @@ func Build(output string, live bool) error {
 	if live {
 		watch(errCh)
 
+		initAuth()
+		initRoutes()
 		go func() {
-			http.Handle("/", http.FileServer(http.Dir(filepath.Join(".", "output"))))
 			err := http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", ServePort), nil)
 			if err != nil {
 				panic(err)
@@ -124,4 +126,19 @@ func Build(output string, live bool) error {
 	}
 
 	return nil
+}
+
+type HandlerFunc func(http.ResponseWriter, *http.Request)
+
+func (f HandlerFunc) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
+	f(rw, req)
+}
+
+func initRoutes() {
+	http.Handle("/callback", HandlerFunc(callbackHandler))
+	http.Handle("/login", HandlerFunc(loginHandler))
+	http.Handle("/logout", HandlerFunc(logoutHandler))
+
+	fileHandler := http.FileServer(http.Dir(filepath.Join(".", "output")))
+	http.Handle("/", negroni.New(negroni.HandlerFunc(isAuthenticated), negroni.Wrap(fileHandler)))
 }
